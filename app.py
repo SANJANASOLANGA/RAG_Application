@@ -11,7 +11,7 @@ from assistant import get_rag_assistant  # type: ignore
 
 st.set_page_config(
     page_title="PDF Q&A",
-    page_icon="⁉",
+    page_icon="🔍",
 )
 st.title("Unlocking Knowledge from PDFs: A RAG-powered Q&A Assistant")
 # st.markdown("##### :orange_heart: built using [phidata](https://github.com/phidatahq/phidata)")
@@ -78,7 +78,7 @@ def main() -> None:
         st.session_state["messages"] = assistant_chat_history
     else:
         logger.debug("No chat history found")
-        st.session_state["messages"] = [{"role": "assistant", "content": "Upload your pdf and ask me questions based on your pdf..."}]
+        st.session_state["messages"] = [{"role": "assistant", "content": "Upload your pdf and ask me questions based on uploaded pdf..."}]
 
     # Prompt for user input
     if prompt := st.chat_input():
